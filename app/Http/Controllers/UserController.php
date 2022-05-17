@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -42,6 +43,7 @@ class UserController extends Controller
     {
         $data = $request->all();
 
+        $data['password'] = Hash::make($request->password);
         $data['profile_photo_path'] = $request->file('profile_photo_path')->store('assets/user','public');
 
         User::create($data);
@@ -80,10 +82,18 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UserRequest $request, User $user)
+    public function update(Request $request, User $user)
     {
-        $data = $request->all();
-
+        $data = $request->validate([
+            'name' => ['required', 'string', 'max:255',],
+            'address' => ['required','string'],
+            'roles' => ['required','string','max:255','in:USER,ADMIN'],
+            'house_number' => ['required','string','max:255'],
+            'phone_number' => ['required','string','max:255'],
+            'sub_district' => ['required','string','max:255'],
+        ]);
+        
+        $data['password'] = Hash::make($request->password);
         if($request->file('profile_photo_path')){
             $data['profile_photo_path'] = $request->file('profile_photo_path')->store('assets.user','public');
         }

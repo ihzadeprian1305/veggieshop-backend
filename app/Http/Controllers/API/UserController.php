@@ -23,7 +23,7 @@ class UserController extends Controller
             // Input Validation
             $request->validate([
                 'email' => 'email|required',
-                'password' => 'password',
+                'password' => 'required',
             ]);
 
             // Check Credentials
