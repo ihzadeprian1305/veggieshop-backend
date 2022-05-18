@@ -44,7 +44,10 @@ class UserController extends Controller
         $data = $request->all();
 
         $data['password'] = Hash::make($request->password);
-        $data['profile_photo_path'] = $request->file('profile_photo_path')->store('assets/user','public');
+        $data['current_team_id'] = 1;
+        if($request->file('profile_photo_path')){
+            $data['profile_photo_path'] = $request->file('profile_photo_path')->store('assets.user','public');
+        }
 
         User::create($data);
 
@@ -94,6 +97,7 @@ class UserController extends Controller
         ]);
         
         $data['password'] = Hash::make($request->password);
+        $data['current_team_id'] = 1;
         if($request->file('profile_photo_path')){
             $data['profile_photo_path'] = $request->file('profile_photo_path')->store('assets.user','public');
         }
