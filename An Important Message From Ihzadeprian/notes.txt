@@ -1,4 +1,4 @@
-Website ini dibangun untuk menyelesaikan tugas Pemrograman Mobile dengan menggunakan Laravel untuk membangun API dan Kotlin untuk Aplikasi Mobile yang dibangun
+API ini dibangun untuk menyelesaikan tugas Pemrograman Mobile dengan menggunakan Laravel untuk membangun API dan Kotlin untuk Aplikasi Mobile yang dibangun
 
 Yang meliputi materi CRUD dengan menggunakan Database dan menggunakan framework Laravel 8
 Bertemakan Aplikasi Mobile pembelian sayur di daerah Kota Malang
