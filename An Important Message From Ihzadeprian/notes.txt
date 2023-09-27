@@ -1,6 +1,6 @@
 Website ini dibangun untuk menyelesaikan tugas Pemrograman Mobile dengan menggunakan Laravel untuk membangun API dan Kotlin untuk Aplikasi Mobile yang dibangun
 
-Yang meliputi materi CRUD dengan menggunakan Database dan menggunakan framework Laravel 9
+Yang meliputi materi CRUD dengan menggunakan Database dan menggunakan framework Laravel 8
 Bertemakan Aplikasi Mobile pembelian sayur di daerah Kota Malang
 
 Menggunakan Local Server Laragon dengan menjalankan perintah 'php artisan serve' dan mengakses http://127.0.0.1:8000/
