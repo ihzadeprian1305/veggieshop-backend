@@ -1,0 +1,14 @@
+Website ini dibangun untuk menyelesaikan tugas Pemrograman Mobile dengan menggunakan Laravel untuk membuat API dan Kotlin untuk Aplikasi Mobile yang dibangun
+
+Yang meliputi materi CRUD dengan menggunakan Database dan menggunakan framework Laravel 9
+Bertemakan Aplikasi Mobile pembelian sayur di daerah Kota Malang
+
+Menggunakan Local Server Laragon dengan menjalankan perintah 'php artisan serve' dan mengakses http://127.0.0.1:8000/
+
+Database berada pada file veggieshop-backend.sql jika ingin yang sudah terdapat banyak data
+Atau bisa dengan perintah 'php artisan migrate --seed' namun isi Database kosong
+
+Login Menggunakan User Kelompok 5 dengan
+Email : kelompok5@gmail.com
+dan
+Password : kelompok5

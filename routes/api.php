@@ -1,13 +1,13 @@
 <?php
 
-use App\Http\Controllers\API\MidtransController;
-use App\Http\Controllers\API\UserController;
-use App\Http\Controllers\API\VegetableController;
 use App\Models\Vegetable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
 use function PHPUnit\Framework\callback;
+use App\Http\Controllers\API\UserController;
+use App\Http\Controllers\API\MidtransController;
+use App\Http\Controllers\API\TransactionController;
+use App\Http\Controllers\API\VegetableController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,12 +30,12 @@ Route::middleware('auth:sanctum')->group((function(){
     Route::get('user', [UserController::class, 'fetch']);
     Route::post('user', [UserController::class, 'updateProfile']);
     Route::post('user/photo', [UserController::class, 'updatePhoto']);
-    Route::post('logout', [UserController::class, 'logout']);
-
+    
     Route::get('transaction', [TransactionController::class, 'all']);
     Route::post('transaction/{id}', [TransactionController::class, 'update']);
     
     Route::post('checkout', [TransactionController::class, 'checkout']);
+    Route::post('logout', [UserController::class, 'logout']);
 }));
 
 Route::post('login', [UserController::class, 'login']);

@@ -42,7 +42,9 @@ class VegetableController extends Controller
     {
         $data = $request->all();
 
-        $data['picturePath'] = $request->file('picturePath')->store('assets/vegetable','public');
+        if($request->file('picturePath')){
+            $data['picturePath'] = $request->file('picturePath')->store('assets.vegetable','public');
+        }
 
         Vegetable::create($data);
 
@@ -85,7 +87,7 @@ class VegetableController extends Controller
         $data = $request->all();
 
         if($request->file('picturePath')){
-            $data['picturePath'] = $request->file('picturePath')->store('assets.vegetables','public');
+            $data['picturePath'] = $request->file('picturePath')->store('assets.vegetable','public');
         }
 
         $vegetable->update($data);
